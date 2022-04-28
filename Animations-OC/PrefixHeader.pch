@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  侧滑菜单
+//
+//  Created by yixiang on 15/7/14.
+//  Copyright (c) 2015年 yixiang. All rights reserved.
+//
+
+#ifndef _____PrefixHeader_pch
+#define _____PrefixHeader_pch
+
+ 
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+#define RandomColorNum  (arc4random()%255)/255.0
+
+#define RandomColor [UIColor colorWithRed: RandomColorNum green:RandomColorNum blue:RandomColorNum alpha: 1]
+
+#endif
