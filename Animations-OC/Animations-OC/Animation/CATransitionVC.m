@@ -39,7 +39,7 @@
 }
 
 -(NSArray *)operateTitleArray{
-    return [NSArray arrayWithObjects:@"fade",@"moveIn",@"push",@"reveal",@"cube",@"suck",@"oglFlip",@"ripple",@"Curl",@"UnCurl",@"caOpen",@"caClose", nil];
+    return [NSArray arrayWithObjects:@"fade",@"moveIn",@"push",@"reveal",@"cube ",@"suckEffect",@"oglFlip",@"rippleEffect ",@"pageCurl ",@"pageUnCurl",@"caOpen",@"caClose", nil];
 }
 
 -(void)tapAction:(UIButton *)btn {
@@ -89,10 +89,10 @@
 //-----------------------------public api------------------------------------
 /*
  type:
-    kCATransitionFade;  淡出
-    kCATransitionMoveIn; 覆盖原图
-    kCATransitionPush;  推出
-    kCATransitionReveal; 底部显出来  
+    kCATransitionFade; 交叉淡化过渡(不支持过渡方向)
+    kCATransitionMoveIn;  //新视图把旧视图推出去
+    kCATransitionPush;  新视图移到旧视图上面
+    kCATransitionReveal; 将旧视图移开,显示下面的新视图
  */
 /*
  subType:
@@ -102,9 +102,7 @@
     kCATransitionFromBottom;
  */
 
-/**
- *  逐渐消失
- */
+ 
 -(void)fadeAnimation{
 
     CATransition *anima = [CATransition animation];
@@ -151,15 +149,19 @@
 }
 
 //-----------------------------private api------------------------------------
-/*
-    Don't be surprised if Apple rejects your app for including those effects,
-    and especially don't be surprised if your app starts behaving strangely after an OS update.
-*/
 
+//下面几个也是过渡效果，但它们是私有API效果，使用的时候要小心，可能会导致app审核不被通过
+//cube     //立方体翻滚效果
+//oglFlip  //上下左右翻转效果
+//suckEffect   //收缩效果，如一块布被抽走(不支持过渡方向)
+//rippleEffect //滴水效果(不支持过渡方向)
+//pageCurl     //向上翻页效果
+//pageUnCurl   //向下翻页效果
+//cameraIrisHollowOpen  //相机镜头打开效果(不支持过渡方向)
+//cameraIrisHollowClose //相机镜头关上效果(不支持过渡方向)
+ 
 
-/**
- *  立体翻滚效果
- */
+//立体翻滚效果
 -(void)cubeAnimation{
 
     CATransition *anima = [CATransition animation];
@@ -171,7 +173,7 @@
     [_demoView.layer addAnimation:anima forKey:@"revealAnimation"];
 }
 
-
+//收缩效果，如一块布被抽走
 -(void)suckEffectAnimation{
 
     CATransition *anima = [CATransition animation];
@@ -193,7 +195,7 @@
 
     [_demoView.layer addAnimation:anima forKey:@"oglFlipAnimation"];
 }
-
+//滴水效果
 -(void)rippleEffectAnimation{
     
     CATransition *anima = [CATransition animation];
@@ -204,7 +206,7 @@
 
     [_demoView.layer addAnimation:anima forKey:@"rippleEffectAnimation"];
 }
-
+//向上翻一页
 -(void)pageCurlAnimation{
  
     CATransition *anima = [CATransition animation];
@@ -215,7 +217,7 @@
 
     [_demoView.layer addAnimation:anima forKey:@"pageCurlAnimation"];
 }
-
+//向下翻一页
 -(void)pageUnCurlAnimation{
  
     CATransition *anima = [CATransition animation];

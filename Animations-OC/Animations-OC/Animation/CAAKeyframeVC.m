@@ -27,7 +27,7 @@
 }
 
 -(NSArray *)operateTitleArray{
-    return [NSArray arrayWithObjects:@"关键帧",@"路径",@"抖动",@"CASpring ", nil];
+    return [NSArray arrayWithObjects:@"关键帧",@"路径",@"抖动", nil];
 }
 
 -(void)tapAction:(UIButton *)btn {
@@ -40,9 +40,6 @@
             break;
         case 2:
             [self shakeAnimation];
-            break;
-        case 3:
-            [self springAnimation];
             break;
         default:
             break;
@@ -106,18 +103,7 @@
      
 }
 
-//CASpringAnimation
--(void)springAnimation{
-    CASpringAnimation *springAni = [CASpringAnimation animationWithKeyPath:@"position"];
-    springAni.damping = 2;
-    springAni.stiffness = 50;
-    springAni.mass = 1;
-    springAni.initialVelocity = 2;
-    springAni.toValue = [NSValue valueWithCGPoint:CGPointMake(270, 350)];
-    springAni.duration = springAni.settlingDuration;
-    [_demoView.layer addAnimation:springAni forKey:@"springAnimation"];
-}
- 
+
 #pragma mark - delegate
 -(void)animationDidStart:(CAAnimation *)anim{
     NSLog(@"开始动画");
