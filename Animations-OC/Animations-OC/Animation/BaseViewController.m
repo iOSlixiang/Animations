@@ -54,7 +54,7 @@
             aniButton.tag = 100 + i;
             [aniButton setTitle:rightNames[i] forState:UIControlStateNormal];
             aniButton.exclusiveTouch = YES;
-            aniButton.frame = CGRectMake(300, 50 + 60 * i, 80, 50);
+            aniButton.frame = CGRectMake(SCREEN_WIDTH - 90, 30 + 60 * i, 80, 50);
             aniButton.backgroundColor = [UIColor orangeColor];
             [aniButton addTarget:self action:@selector(rightClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:aniButton];

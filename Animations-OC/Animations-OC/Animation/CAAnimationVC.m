@@ -21,11 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title =@"CAAnimation 动画";
+    self.navigationItem.title =@"CABasicAnimation 动画";
     
 }
 -(NSArray *)operateTitleArray{
-    return @[@"位移",@"缩放",@"透明度",@"旋转",@"圆角",@"动画组",@"同时添加",@"连续动画"];
+    return @[@"位移",@"缩放",@"透明度",@"旋转",@"圆角/背景色",@"动画组",@"同时添加",@"连续动画"];
 }
 -(void)initView{
    [super initView];

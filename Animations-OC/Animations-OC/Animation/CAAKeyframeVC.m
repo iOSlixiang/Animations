@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"关键帧动画";
+    self.title = @"CAKeyframeAnimation";
 }
 -(void)initView{
     [super initView];

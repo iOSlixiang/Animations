@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"转场动画";
+    self.title = @"CATransition";
 }
 -(void)initView{
     [super initView];
