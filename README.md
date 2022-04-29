@@ -12,7 +12,7 @@
 iOS 动画 —— UIView动画  
 https://www.jianshu.com/p/e39f6d6ed92b  
 
-iOS 动画—— Core Animation：
+iOS 动画—— Core Animation 
 https://www.jianshu.com/p/62fae9546a8c
 
 iOS 动画 —— CATransition  
