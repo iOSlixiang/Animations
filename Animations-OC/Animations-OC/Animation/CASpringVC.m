@@ -20,18 +20,20 @@
  
 -(void)initView{
     [super initView];
+    [super setupOperateUI];
+
     self.animationLayer = [[CALayer alloc] init];
     self.animationLayer.frame = CGRectMake(SCREEN_WIDTH/2-25, SCREEN_HEIGHT/2-50,50,50);
     self.animationLayer.backgroundColor = [UIColor redColor].CGColor;
     [self.view.layer addSublayer:_animationLayer];
 
 }
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return [NSArray arrayWithObjects: @"Animation0",@"Animation1", nil];
 }
 
--(void)tapAction:(UIButton *)btn {
-    switch (btn.tag) {
+-(void)titleClick:(NSInteger)index {
+    switch (index) {
         case 0:
             [self springAnimation0];
             break;
@@ -72,8 +74,8 @@
 }
 #pragma mark - right
 //控制动画状态按钮点击
--(void)rightClick:(UIButton *)sender{
-    switch (sender.tag) {
+-(void)operateClick:(NSInteger)index{
+    switch (index) {
         case 100:
             [self animationPause];
             break;

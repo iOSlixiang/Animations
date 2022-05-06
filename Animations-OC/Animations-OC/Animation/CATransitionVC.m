@@ -38,12 +38,12 @@
     
 }
 
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return [NSArray arrayWithObjects:@"fade",@"moveIn",@"push",@"reveal",@"cube ",@"suckEffect",@"oglFlip",@"rippleEffect ",@"pageCurl ",@"pageUnCurl",@"caOpen",@"caClose", nil];
 }
 
--(void)tapAction:(UIButton *)btn {
-    switch (btn.tag) {
+-(void)titleClick:(NSInteger)index {
+    switch (index) {
         case 0:
             [self fadeAnimation];
             break;

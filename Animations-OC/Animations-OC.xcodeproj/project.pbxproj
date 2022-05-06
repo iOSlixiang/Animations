@@ -76,6 +76,9 @@
 		576F2231281A74D000B710F7 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 576F222F281A74D000B710F7 /* DWBubbleMenuButton.m */; };
 		576F2237281A750900B710F7 /* MCFireworksButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 576F2233281A750900B710F7 /* MCFireworksButton.m */; };
 		576F2238281A750900B710F7 /* MCFireworksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 576F2234281A750900B710F7 /* MCFireworksView.m */; };
+		577588222824BACD00BCFC0E /* UIBezierPathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 577588212824BACD00BCFC0E /* UIBezierPathVC.m */; };
+		577588252824C0CB00BCFC0E /* UIBezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 577588242824C0CB00BCFC0E /* UIBezierPathView.m */; };
+		577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 577588272825172C00BCFC0E /* CAShapeLayerVC.m */; };
 		5789F8FF281A9649009E43A1 /* CASpringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F8FE281A9649009E43A1 /* CASpringVC.m */; };
 		5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F906281A9F7A009E43A1 /* DrawLineVC.m */; };
 /* End PBXBuildFile section */
@@ -170,6 +173,12 @@
 		576F2234281A750900B710F7 /* MCFireworksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFireworksView.m; sourceTree = "<group>"; };
 		576F2235281A750900B710F7 /* MCFireworksButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFireworksButton.h; sourceTree = "<group>"; };
 		576F2236281A750900B710F7 /* MCFireworksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFireworksView.h; sourceTree = "<group>"; };
+		577588202824BACD00BCFC0E /* UIBezierPathVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBezierPathVC.h; sourceTree = "<group>"; };
+		577588212824BACD00BCFC0E /* UIBezierPathVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBezierPathVC.m; sourceTree = "<group>"; };
+		577588232824C0CB00BCFC0E /* UIBezierPathView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBezierPathView.h; sourceTree = "<group>"; };
+		577588242824C0CB00BCFC0E /* UIBezierPathView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBezierPathView.m; sourceTree = "<group>"; };
+		577588262825172C00BCFC0E /* CAShapeLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerVC.h; sourceTree = "<group>"; };
+		577588272825172C00BCFC0E /* CAShapeLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerVC.m; sourceTree = "<group>"; };
 		5789F8FD281A9649009E43A1 /* CASpringVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CASpringVC.h; sourceTree = "<group>"; };
 		5789F8FE281A9649009E43A1 /* CASpringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CASpringVC.m; sourceTree = "<group>"; };
 		5789F905281A9F7A009E43A1 /* DrawLineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineVC.h; sourceTree = "<group>"; };
@@ -211,7 +220,7 @@
 				57643C412819234500924759 /* ViewController.h */,
 				57643C422819234500924759 /* ViewController.m */,
 				5789F903281A9EEE009E43A1 /* Animation */,
-				5789F904281A9F39009E43A1 /* UIBezierPath */,
+				5789F904281A9F39009E43A1 /* DrawView */,
 			);
 			path = "Animations-OC";
 			sourceTree = "<group>";
@@ -373,13 +382,19 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
-		5789F904281A9F39009E43A1 /* UIBezierPath */ = {
+		5789F904281A9F39009E43A1 /* DrawView */ = {
 			isa = PBXGroup;
 			children = (
 				5789F905281A9F7A009E43A1 /* DrawLineVC.h */,
 				5789F906281A9F7A009E43A1 /* DrawLineVC.m */,
+				577588202824BACD00BCFC0E /* UIBezierPathVC.h */,
+				577588212824BACD00BCFC0E /* UIBezierPathVC.m */,
+				577588232824C0CB00BCFC0E /* UIBezierPathView.h */,
+				577588242824C0CB00BCFC0E /* UIBezierPathView.m */,
+				577588262825172C00BCFC0E /* CAShapeLayerVC.h */,
+				577588272825172C00BCFC0E /* CAShapeLayerVC.m */,
 			);
-			path = UIBezierPath;
+			path = DrawView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,9 +525,11 @@
 				576F21B5281A3F9A00B710F7 /* CATransitionVC.m in Sources */,
 				576F2238281A750900B710F7 /* MCFireworksView.m in Sources */,
 				576F2231281A74D000B710F7 /* DWBubbleMenuButton.m in Sources */,
+				577588252824C0CB00BCFC0E /* UIBezierPathView.m in Sources */,
 				576F222D281A74C000B710F7 /* DCPathCenterButton.m in Sources */,
 				5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */,
 				57643C3D2819234500924759 /* AppDelegate.m in Sources */,
+				577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */,
 				576F2237281A750900B710F7 /* MCFireworksButton.m in Sources */,
 				57643C4E2819234800924759 /* main.m in Sources */,
 				576F21F5281A706B00B710F7 /* CAEmitterVC.m in Sources */,
@@ -520,6 +537,7 @@
 				57643C5D281946BB00924759 /* CAAnimationVC.m in Sources */,
 				576F21B8281A6C9F00B710F7 /* OtherCaseVC.m in Sources */,
 				576F21BB281A6DD500B710F7 /* UIAnimationImagesVC.m in Sources */,
+				577588222824BACD00BCFC0E /* UIBezierPathVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

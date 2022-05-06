@@ -20,9 +20,10 @@
 }
 -(void)initView{
     [super initView];
-    
+    [super setupOperateUI];
+
 }
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return @[@"大雪纷飞",@"心花怒放",@"百花争艳",@"璀璨烟花"];
 }
 -(CAEmitterLayer *)emitterLayer{
@@ -34,10 +35,10 @@
     return _emitterLayer;
 }
 
--(void)tapAction:(UIButton*)sender{
+-(void)titleClick:(NSInteger)index{
     //首先停止之前动画
     [self animationStop];
-    switch (sender.tag) {
+    switch (index) {
         case 0:
             [self snow];
             break;
@@ -243,8 +244,8 @@
 
 #pragma mark - right
 //控制动画状态按钮点击
--(void)rightClick:(UIButton *)sender{
-    switch (sender.tag) {
+-(void)operateClick:(NSInteger)index{
+    switch (index) {
         case 100:
             [self animationPause];
             break;

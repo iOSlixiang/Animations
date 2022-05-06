@@ -6,9 +6,11 @@
 //
 
 #import "BaseViewController.h"
+ 
+@interface BaseViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@interface BaseViewController ()
-@property (nonatomic , strong) NSArray *operateTitleArray;
+@property (nonatomic, strong) NSArray *titleArray;
+
 
 @end
 
@@ -18,55 +20,71 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    [self initData];
+     
     [self initView];
+    [self initData];
 }
 
 -(void)initData{
-    _operateTitleArray = [self operateTitleArray];
+    self.titleArray = [self titleArray];
+    [self.tableView reloadData];
 }
--(BOOL)isShowRight{
-    return YES;
-}
+
 -(void)initView{
-     
-    if(!self.operateTitleArray&&self.operateTitleArray.count == 0){
-        
-        return;
-    }
-    for (int i = 0; i < _operateTitleArray.count; i++) {
+    [self.view addSubview:self.tableView];
+}
+
+-(void)setupOperateUI{
+    
+    NSArray *rightNames = @[@"暂停",@"恢复",@"停止"];
+    
+    for (int i = 0; i < rightNames.count; i++) {
         UIButton *aniButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        aniButton.tag = i;
-        [aniButton setTitle:self.operateTitleArray[i] forState:UIControlStateNormal];
+        aniButton.tag = 100 + i;
+        [aniButton setTitle:rightNames[i] forState:UIControlStateNormal];
         aniButton.exclusiveTouch = YES;
-        aniButton.frame = CGRectMake(10, 30 + 50 * i, 100, 40);
-        aniButton.backgroundColor = [UIColor blueColor];
-        [aniButton addTarget:self action:@selector(tapAction:) forControlEvents:UIControlEventTouchUpInside];
+        aniButton.frame = CGRectMake(30 + 90 * i, SCREEN_HEIGHT- 150, 80, 30);
+        aniButton.backgroundColor = [UIColor orangeColor];
+        [aniButton addTarget:self action:@selector(rightClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:aniButton];
     }
     
-    if ([self isShowRight]) {
-        NSArray *rightNames = @[@"暂停",@"恢复",@"停止"];
-        
-        for (int i = 0; i < rightNames.count; i++) {
-            UIButton *aniButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            aniButton.tag = 100 + i;
-            [aniButton setTitle:rightNames[i] forState:UIControlStateNormal];
-            aniButton.exclusiveTouch = YES;
-            aniButton.frame = CGRectMake(SCREEN_WIDTH - 90, 30 + 60 * i, 80, 50);
-            aniButton.backgroundColor = [UIColor orangeColor];
-            [aniButton addTarget:self action:@selector(rightClick:) forControlEvents:UIControlEventTouchUpInside];
-            [self.view addSubview:aniButton];
-        }
+}
+#pragma mark - tableView
+-(UITableView *)tableView{
+    if (!_tableView) {
+        _tableView  =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 120, SCREEN_HEIGHT- 180) style:(UITableViewStylePlain)];
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellId"];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.backgroundColor = [UIColor whiteColor];
     }
+    return _tableView;
+}
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.titleArray.count;
+}
+ 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellId"];
+    cell.textLabel.text = self.titleArray[indexPath.row];
+    return cell;
     
 }
--(void)tapAction:(UIButton *)btn{
+ 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self titleClick:indexPath.row];
+}
+
+-(void)titleClick:(NSInteger)index{
     
 }
 -(void)rightClick:(UIButton *)btn{
+    [self operateClick:btn.tag];
+}
+-(void)operateClick:(NSInteger)index{
     
 }
+
 @end

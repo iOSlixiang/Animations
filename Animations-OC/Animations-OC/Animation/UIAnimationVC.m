@@ -54,12 +54,11 @@ UIViewAnimationOptionTransitionFlipFromBottom：从底部翻转效果。
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.navigationItem.title = @"UIView 动画";
   
 }
 
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return @[@"位移",@"缩放",@"透明度",@"弹动",@"转场",@"变色龙"];
 }
  
@@ -70,8 +69,8 @@ UIViewAnimationOptionTransitionFlipFromBottom：从底部翻转效果。
     [self.view addSubview:self.customView];
 }
 
--(void)tapAction:(UIButton*)button{
-    switch (button.tag) {
+-(void)titleClick:(NSInteger)index{
+    switch (index) {
         case 0://位移
             [self positionAnimation];
             break;

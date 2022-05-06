@@ -17,15 +17,13 @@
     [super viewDidLoad];
     self.title = @"画线";
 }
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return @[@"画椭圆",@"画路径"];
 }
--(BOOL)isShowRight{
-    return NO;
-}
--(void)tapAction:(UIButton *)button{
+ 
+-(void)titleClick:(NSInteger)index{
     
-    switch (button.tag) {
+    switch (index) {
         case 0://位移
             [self pathOvalInRect];
             break;
@@ -40,19 +38,23 @@
 }
 
 -(void)pathOvalInRect{
-    UIView * bgView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/2,30,50,50)];
+    UIView * bgView = [[UIView alloc]initWithFrame:CGRectMake(160,30,100,100)];
     
     UIBezierPath * bezierPath = [UIBezierPath bezierPathWithOvalInRect:bgView.frame];
     
     CAShapeLayer * shapeLayer = [[CAShapeLayer alloc]init];
     shapeLayer.strokeColor = [UIColor purpleColor].CGColor;
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
-    shapeLayer.lineWidth = 10;
+    shapeLayer.lineWidth = 5;
     shapeLayer.lineJoin = kCALineJoinRound;
     shapeLayer.lineCap = kCALineCapRound;
     shapeLayer.path = bezierPath.CGPath;
+    shapeLayer.strokeStart= 0;
+    shapeLayer.strokeEnd = 0.5;
     [self.view.layer addSublayer:shapeLayer];
     
+    
+    //  Animation是控制 stroke[0,1]的进度
     CABasicAnimation * pathAnim = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnim.duration = 2.0;
     pathAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
@@ -61,7 +63,7 @@
     //    pathAnim.autoreverses = true;
     pathAnim.fillMode = kCAFillModeForwards;
     //    [pathAnim setRemovedOnCompletion:false];
-    pathAnim.repeatCount = HUGE_VALF;
+    pathAnim.repeatCount = 1;
     [shapeLayer addAnimation:pathAnim forKey:@"pathAnim"];
     
 }

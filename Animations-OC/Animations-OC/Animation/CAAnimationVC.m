@@ -24,30 +24,31 @@
     self.navigationItem.title =@"CABasicAnimation 动画";
     
 }
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return @[@"位移",@"缩放",@"透明度",@"旋转",@"圆角/背景色",@"动画组",@"同时添加",@"连续动画"];
 }
 -(void)initView{
-   [super initView];
+    [super initView];
+    [super setupOperateUI];
     
-   self.animationLayer = [[CALayer alloc] init];
-   _animationLayer.bounds = CGRectMake(0, 0, 100, 100);
-   _animationLayer.position = self.view.center;
-   _animationLayer.backgroundColor = [UIColor redColor].CGColor;
-   [self.view.layer addSublayer:_animationLayer];
+    self.animationLayer = [[CALayer alloc] init];
+    _animationLayer.bounds = CGRectMake(0, 0, 100, 100);
+    _animationLayer.position = self.view.center;
+    _animationLayer.backgroundColor = [UIColor redColor].CGColor;
+    [self.view.layer addSublayer:_animationLayer];
 }
 #pragma mark - left
--(void)tapAction:(UIButton*)button{
-    if (button.tag < 5) {
-        [self basicAnimationWithTag:button.tag];
+-(void)titleClick:(NSInteger)index{
+    if (index < 5) {
+        [self basicAnimationWithTag:index];
     }
-    else if(button.tag == 5){
+    else if(index == 5){
         [self animationGroup1];;
     }
-    else if (button.tag == 6){
+    else if (index == 6){
         [self animationGroup2];
     }
-    else if (button.tag == 7){
+    else if (index== 7){
         [self animationGroup3];
     }
     
@@ -69,8 +70,8 @@
             basicAni.toValue = @(0.1f);
             
             // 修改bounds 大小达到缩放
-//            basicAni = [CABasicAnimation animationWithKeyPath:@"bounds"];
-//            basicAni.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 200, 200)];
+            //            basicAni = [CABasicAnimation animationWithKeyPath:@"bounds"];
+            //            basicAni.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 200, 200)];
             
             break;
         case 2:
@@ -80,8 +81,8 @@
         case 3:
             
             //3D  绕着矢量（x,y,z）旋转
-//            basicAni = [CABasicAnimation animationWithKeyPath:@"transform"];
-//            basicAni.toValue=[NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2+M_PI_4, 1, 1, 0)];
+            //            basicAni = [CABasicAnimation animationWithKeyPath:@"transform"];
+            //            basicAni.toValue=[NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2+M_PI_4, 1, 1, 0)];
             
             //绕着z轴为矢量，进行旋转(@"transform.rotation.z"==@@"transform.rotation")
             basicAni = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
@@ -175,14 +176,14 @@
     anima1.values = [NSArray arrayWithObjects:value0,value1,value2,value3,value4,value5, nil];
     anima1.duration = 4.0f;
     [_animationLayer addAnimation:anima1 forKey:@"aa"];
-
+    
     //缩放动画
     CABasicAnimation *anima2 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     anima2.fromValue = [NSNumber numberWithFloat:0.8f];
     anima2.toValue = [NSNumber numberWithFloat:2.0f];
     anima2.duration = 4.0f;
     [_animationLayer addAnimation:anima2 forKey:@"bb"];
-
+    
     //旋转动画
     CABasicAnimation *anima3 = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     anima3.toValue = [NSNumber numberWithFloat:M_PI*4];
@@ -224,8 +225,8 @@
 
 #pragma mark - right
 //控制动画状态按钮点击
--(void)rightClick:(UIButton *)sender{
-    switch (sender.tag) {
+-(void)operateClick:(NSInteger)index{
+    switch (index) {
         case 100:
             [self animationPause];
             break;
@@ -273,6 +274,6 @@
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     NSLog(@"动画 ---- %@  ---- 已停止",anim);
 }
- 
+
 
 @end

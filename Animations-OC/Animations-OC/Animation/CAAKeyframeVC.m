@@ -26,12 +26,12 @@
     [self.view addSubview:_demoView];
 }
 
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return [NSArray arrayWithObjects:@"关键帧",@"路径",@"抖动", nil];
 }
 
--(void)tapAction:(UIButton *)btn {
-    switch (btn.tag) {
+-(void)titleClick:(NSInteger)index {
+    switch (index) {
         case 0:
             [self keyFrameAnimation];
             break;

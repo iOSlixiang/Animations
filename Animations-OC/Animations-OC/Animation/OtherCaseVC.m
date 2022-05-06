@@ -22,14 +22,14 @@
     [super viewDidLoad];
     self.title =@"综合案例";
 }
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return  @[@"path",@"钉钉",@"点赞",@"贝塞尔曲线"];
 }
 -(BOOL)isHiddenRight{
     return NO;
 }
--(void)tapAction:(UIButton *)btn {
-    switch (btn.tag) {
+-(void)titleClick:(NSInteger)index {
+    switch (index) {
         case 0:
             [self makeAPathAnimation];
             break;

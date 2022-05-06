@@ -22,16 +22,17 @@
 }
 -(void)initView{
     [super initView];
+    
     self.demoView = [[UIView alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
     self.demoView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:self.demoView];
 }
--(NSArray *)operateTitleArray{
+-(NSArray *)titleArray{
     return [NSArray arrayWithObjects:@"位移",@"缩放",@"旋转",@"组合",@"反转",nil];
 }
 
--(void)tapAction: (UIButton *)btn{
-    switch (btn.tag) {
+-(void)titleClick:(NSInteger)index{
+    switch (index) {
         case 0:
             [self positionAnimation];
             break;

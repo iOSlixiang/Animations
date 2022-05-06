@@ -10,18 +10,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
-
+ 
+@property (nonatomic, strong) UITableView *tableView;
 
 -(void)initView;
+-(void)setupOperateUI;
 
-/// 是否显示右侧按钮
--(BOOL)isShowRight;
- /// 操作数组
--(NSArray *)operateTitleArray;
-/// 每个按钮的点击时间
--(void)tapAction:(UIButton *)btn;
-/// 右侧按钮
--(void)rightClick:(UIButton *)btn;
+-(NSArray *)titleArray;
+
+
+-(void)titleClick:(NSInteger)index;
+-(void)operateClick:(NSInteger)index;
 
 @end
 
