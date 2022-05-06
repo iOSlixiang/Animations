@@ -42,7 +42,7 @@
     shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
     
     shapeLayer.strokeStart = 0;
-    shapeLayer.strokeEnd = 0.5;
+    shapeLayer.strokeEnd = 1;
   
     self.pathLayer = shapeLayer;
 }
