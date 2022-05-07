@@ -81,6 +81,11 @@
 		577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 577588272825172C00BCFC0E /* CAShapeLayerVC.m */; };
 		5789F8FF281A9649009E43A1 /* CASpringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F8FE281A9649009E43A1 /* CASpringVC.m */; };
 		5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F906281A9F7A009E43A1 /* DrawLineVC.m */; };
+		57DEE86E2826568A00E8F6CE /* DrawCatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE86D2826568A00E8F6CE /* DrawCatVC.m */; };
+		57DEE8712826648400E8F6CE /* JJCuteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE8702826648400E8F6CE /* JJCuteView.m */; };
+		57DEE8742826699000E8F6CE /* CGContextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE8732826699000E8F6CE /* CGContextVC.m */; };
+		57DEE877282669D800E8F6CE /* CGContextAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE876282669D800E8F6CE /* CGContextAll.m */; };
+		57DEE87A2826740800E8F6CE /* CGContextOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE8792826740800E8F6CE /* CGContextOne.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +188,16 @@
 		5789F8FE281A9649009E43A1 /* CASpringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CASpringVC.m; sourceTree = "<group>"; };
 		5789F905281A9F7A009E43A1 /* DrawLineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineVC.h; sourceTree = "<group>"; };
 		5789F906281A9F7A009E43A1 /* DrawLineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLineVC.m; sourceTree = "<group>"; };
+		57DEE86C2826568A00E8F6CE /* DrawCatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawCatVC.h; sourceTree = "<group>"; };
+		57DEE86D2826568A00E8F6CE /* DrawCatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawCatVC.m; sourceTree = "<group>"; };
+		57DEE86F2826648400E8F6CE /* JJCuteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCuteView.h; sourceTree = "<group>"; };
+		57DEE8702826648400E8F6CE /* JJCuteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJCuteView.m; sourceTree = "<group>"; };
+		57DEE8722826699000E8F6CE /* CGContextVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextVC.h; sourceTree = "<group>"; };
+		57DEE8732826699000E8F6CE /* CGContextVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextVC.m; sourceTree = "<group>"; };
+		57DEE875282669D800E8F6CE /* CGContextAll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextAll.h; sourceTree = "<group>"; };
+		57DEE876282669D800E8F6CE /* CGContextAll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextAll.m; sourceTree = "<group>"; };
+		57DEE8782826740800E8F6CE /* CGContextOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContextOne.h; sourceTree = "<group>"; };
+		57DEE8792826740800E8F6CE /* CGContextOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContextOne.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,14 +400,24 @@
 		5789F904281A9F39009E43A1 /* DrawView */ = {
 			isa = PBXGroup;
 			children = (
-				5789F905281A9F7A009E43A1 /* DrawLineVC.h */,
-				5789F906281A9F7A009E43A1 /* DrawLineVC.m */,
 				577588202824BACD00BCFC0E /* UIBezierPathVC.h */,
 				577588212824BACD00BCFC0E /* UIBezierPathVC.m */,
 				577588232824C0CB00BCFC0E /* UIBezierPathView.h */,
 				577588242824C0CB00BCFC0E /* UIBezierPathView.m */,
 				577588262825172C00BCFC0E /* CAShapeLayerVC.h */,
 				577588272825172C00BCFC0E /* CAShapeLayerVC.m */,
+				5789F905281A9F7A009E43A1 /* DrawLineVC.h */,
+				5789F906281A9F7A009E43A1 /* DrawLineVC.m */,
+				57DEE86C2826568A00E8F6CE /* DrawCatVC.h */,
+				57DEE86D2826568A00E8F6CE /* DrawCatVC.m */,
+				57DEE86F2826648400E8F6CE /* JJCuteView.h */,
+				57DEE8702826648400E8F6CE /* JJCuteView.m */,
+				57DEE8722826699000E8F6CE /* CGContextVC.h */,
+				57DEE8732826699000E8F6CE /* CGContextVC.m */,
+				57DEE8782826740800E8F6CE /* CGContextOne.h */,
+				57DEE8792826740800E8F6CE /* CGContextOne.m */,
+				57DEE875282669D800E8F6CE /* CGContextAll.h */,
+				57DEE876282669D800E8F6CE /* CGContextAll.m */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -517,9 +542,11 @@
 			files = (
 				576F222C281A74C000B710F7 /* DCPathItemButton.m in Sources */,
 				57643C432819234500924759 /* ViewController.m in Sources */,
+				57DEE87A2826740800E8F6CE /* CGContextOne.m in Sources */,
 				576F21B0281A382200B710F7 /* CAAKeyframeVC.m in Sources */,
 				57643C5A2819447000924759 /* BaseViewController.m in Sources */,
 				5789F8FF281A9649009E43A1 /* CASpringVC.m in Sources */,
+				57DEE86E2826568A00E8F6CE /* DrawCatVC.m in Sources */,
 				57643C5728192DAD00924759 /* UIAnimationVC.m in Sources */,
 				576F222B281A74C000B710F7 /* DCPathButton.m in Sources */,
 				576F21B5281A3F9A00B710F7 /* CATransitionVC.m in Sources */,
@@ -528,6 +555,7 @@
 				577588252824C0CB00BCFC0E /* UIBezierPathView.m in Sources */,
 				576F222D281A74C000B710F7 /* DCPathCenterButton.m in Sources */,
 				5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */,
+				57DEE8742826699000E8F6CE /* CGContextVC.m in Sources */,
 				57643C3D2819234500924759 /* AppDelegate.m in Sources */,
 				577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */,
 				576F2237281A750900B710F7 /* MCFireworksButton.m in Sources */,
@@ -536,7 +564,9 @@
 				576F21AD281A341300B710F7 /* UITransformVC.m in Sources */,
 				57643C5D281946BB00924759 /* CAAnimationVC.m in Sources */,
 				576F21B8281A6C9F00B710F7 /* OtherCaseVC.m in Sources */,
+				57DEE877282669D800E8F6CE /* CGContextAll.m in Sources */,
 				576F21BB281A6DD500B710F7 /* UIAnimationImagesVC.m in Sources */,
+				57DEE8712826648400E8F6CE /* JJCuteView.m in Sources */,
 				577588222824BACD00BCFC0E /* UIBezierPathVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

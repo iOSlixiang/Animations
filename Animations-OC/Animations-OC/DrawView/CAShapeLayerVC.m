@@ -93,12 +93,42 @@
 }
 
 ///  矩形
--(void)createRect{
+-(void)createRect1{
     CGRect rect = CGRectMake(50, 50, 100, 100);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
     
     [self setupCommon: path];
+}
+
+///  矩形
+-(void)createRect{
+    // 矩形的尺寸
+    CGRect rect = CGRectMake(50, 50, 100, 100);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
+    
+    // 在view上直接绘制，而不是添加控件图层
+    CAShapeLayer * shapeLayer = [CAShapeLayer layer];
+    
+    // 不设置frame 默认同self.view
+    shapeLayer.frame = CGRectMake(150, 30, 200, 400);
+    shapeLayer.backgroundColor = [UIColor lightGrayColor].CGColor;
+    
+    //设置填充颜色
+    shapeLayer.fillColor = [UIColor yellowColor].CGColor;
+    //设置线的颜色
+    shapeLayer.strokeColor = [UIColor orangeColor].CGColor;
+    //设置线宽
+    shapeLayer.lineWidth = 2.0;
+    // 边线路径的完成情况
+    shapeLayer.strokeStart = 0;
+    shapeLayer.strokeEnd = 1;
+    
+    // 设置CAShapeLayer与UIBezierPath关联
+    shapeLayer.path = path.CGPath;
+    
+    // 将CAShaperLayer放到某个层上显示
+    [self.view.layer addSublayer:shapeLayer];
 }
 
 /// 圆形

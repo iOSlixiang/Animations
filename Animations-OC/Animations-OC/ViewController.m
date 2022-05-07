@@ -18,9 +18,11 @@
 #import "CASpringVC.h"
 #import "OtherCaseVC.h"
 
-#import "DrawLineVC.h"
 #import "UIBezierPathVC.h"
 #import "CAShapeLayerVC.h"
+#import "DrawLineVC.h"
+#import "DrawCatVC.h"
+#import "CGContextVC.h"
 
 NSString *const CellId = @"cellId";
 
@@ -67,9 +69,11 @@ NSString *const CellId = @"cellId";
     NSMutableDictionary *dic_1 = [NSMutableDictionary dictionaryWithObject:array_1 forKey:@"value"];
     [dic_1 setValue:@"动画" forKey:@"title"];
      
-    NSArray *array_2 = @[@"DrawLineVC",
-                         @"UIBezierPath",
-                         @"CAShapeLayer"];
+    NSArray *array_2 = @[@"UIBezierPath",
+                         @"CAShapeLayer",
+                         @"绘制线:DrawLine",
+                         @"绘制猫:DrawCat",
+    @"CGContextRef"];
     NSMutableDictionary *dic_2 = [NSMutableDictionary dictionaryWithObject:array_2 forKey:@"value"];
     [dic_2 setValue:@"绘图" forKey:@"title"];
     
@@ -173,14 +177,21 @@ NSString *const CellId = @"cellId";
     UIViewController * drawVC;
     switch (indexPath.row) {
         case 0:
-            drawVC = [[DrawLineVC alloc]init];
-            break;
-        case 1:
             drawVC =  [[UIBezierPathVC alloc]init];
             break;
-        case 2:
+        case 1:
             drawVC =  [[CAShapeLayerVC alloc]init];
             break;
+        case 2:
+            drawVC = [[DrawLineVC alloc]init];
+            break;
+        case 3:
+            drawVC = [[DrawCatVC alloc]init];
+            break;
+        case 4:
+            drawVC = [[CGContextVC alloc]init];
+            break;
+            
         default:
             break;
     }
