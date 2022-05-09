@@ -22,7 +22,7 @@
     
     self.title =@"CGContextRef";
     
-    [self titleClick:0];
+    [self titleClick:1];
     
 }
 -(void)initView{
@@ -42,15 +42,19 @@
     
 }
 -(NSArray *)titleArray{
-    return @[@"AllView",
+    return @[@"All",
              @"折线",
              @"虚线",
              @"多条线段",
              @"文字绘制",
              @"画圆",
-    @"添加线",
-    @"曲线",
-    @"填充颜色"];
+             @"添加线",
+             @"曲线",
+             @"填充颜色",
+             @"椭圆",
+             @"曲线",
+             @"图像绘制",
+             @"给图像绘制文字"];
 }
  
 -(void)titleClick:(NSInteger)index{
