@@ -16,6 +16,7 @@
 #import "CATransitionVC.h"
 #import "CAEmitterVC.h"
 #import "CASpringVC.h"
+#import "CADisplayLinkVC.h"
 #import "OtherCaseVC.h"
 
 #import "UIBezierPathVC.h"
@@ -65,6 +66,7 @@ NSString *const CellId = @"cellId";
                          @"转场动画:CATransition",
                          @"粒子动画:CAEmitterLayer",
                          @"弹簧动画:CASpringAnimation",
+                         @"Time动画:CADisplayLink",
                          @"综合案例"];
     NSMutableDictionary *dic_1 = [NSMutableDictionary dictionaryWithObject:array_1 forKey:@"value"];
     [dic_1 setValue:@"动画" forKey:@"title"];
@@ -156,6 +158,9 @@ NSString *const CellId = @"cellId";
             animaVC = [[CASpringVC alloc]init];
             break;
         case 8:
+            animaVC = [[CADisplayLinkVC alloc]init];
+            break;
+        case 9:
             animaVC = [[OtherCaseVC alloc]init];
             break;
             

@@ -13,8 +13,6 @@
 
 @property(nonatomic,strong)CALayer *animationLayer;
 
-@property(nonatomic,strong)CADisplayLink *displayLink;
-
 @end
 
 @implementation CAAnimationVC

@@ -81,6 +81,7 @@
 		577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 577588272825172C00BCFC0E /* CAShapeLayerVC.m */; };
 		5789F8FF281A9649009E43A1 /* CASpringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F8FE281A9649009E43A1 /* CASpringVC.m */; };
 		5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F906281A9F7A009E43A1 /* DrawLineVC.m */; };
+		57AEAE43282BAE5F00589F60 /* CADisplayLinkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AEAE42282BAE5F00589F60 /* CADisplayLinkVC.m */; };
 		57DEE86E2826568A00E8F6CE /* DrawCatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE86D2826568A00E8F6CE /* DrawCatVC.m */; };
 		57DEE8712826648400E8F6CE /* JJCuteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE8702826648400E8F6CE /* JJCuteView.m */; };
 		57DEE8742826699000E8F6CE /* CGContextVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE8732826699000E8F6CE /* CGContextVC.m */; };
@@ -188,6 +189,8 @@
 		5789F8FE281A9649009E43A1 /* CASpringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CASpringVC.m; sourceTree = "<group>"; };
 		5789F905281A9F7A009E43A1 /* DrawLineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineVC.h; sourceTree = "<group>"; };
 		5789F906281A9F7A009E43A1 /* DrawLineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLineVC.m; sourceTree = "<group>"; };
+		57AEAE41282BAE5F00589F60 /* CADisplayLinkVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADisplayLinkVC.h; sourceTree = "<group>"; };
+		57AEAE42282BAE5F00589F60 /* CADisplayLinkVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CADisplayLinkVC.m; sourceTree = "<group>"; };
 		57DEE86C2826568A00E8F6CE /* DrawCatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawCatVC.h; sourceTree = "<group>"; };
 		57DEE86D2826568A00E8F6CE /* DrawCatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawCatVC.m; sourceTree = "<group>"; };
 		57DEE86F2826648400E8F6CE /* JJCuteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJCuteView.h; sourceTree = "<group>"; };
@@ -393,6 +396,8 @@
 				5789F8FE281A9649009E43A1 /* CASpringVC.m */,
 				576F21B6281A6C9F00B710F7 /* OtherCaseVC.h */,
 				576F21B7281A6C9F00B710F7 /* OtherCaseVC.m */,
+				57AEAE41282BAE5F00589F60 /* CADisplayLinkVC.h */,
+				57AEAE42282BAE5F00589F60 /* CADisplayLinkVC.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				576F2237281A750900B710F7 /* MCFireworksButton.m in Sources */,
 				57643C4E2819234800924759 /* main.m in Sources */,
 				576F21F5281A706B00B710F7 /* CAEmitterVC.m in Sources */,
+				57AEAE43282BAE5F00589F60 /* CADisplayLinkVC.m in Sources */,
 				576F21AD281A341300B710F7 /* UITransformVC.m in Sources */,
 				57643C5D281946BB00924759 /* CAAnimationVC.m in Sources */,
 				576F21B8281A6C9F00B710F7 /* OtherCaseVC.m in Sources */,
@@ -721,7 +727,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,7 +756,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
