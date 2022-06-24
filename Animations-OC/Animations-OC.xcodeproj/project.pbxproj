@@ -81,6 +81,9 @@
 		577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 577588272825172C00BCFC0E /* CAShapeLayerVC.m */; };
 		5789F8FF281A9649009E43A1 /* CASpringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F8FE281A9649009E43A1 /* CASpringVC.m */; };
 		5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5789F906281A9F7A009E43A1 /* DrawLineVC.m */; };
+		57A6A7D1282CB33A00D9827F /* BrushDrawVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A7D0282CB33A00D9827F /* BrushDrawVC.m */; };
+		57A6A7D4282CDDE200D9827F /* CircleProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A7D3282CDDE200D9827F /* CircleProgressLayer.m */; };
+		57A6A7D7282CDE0300D9827F /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A6A7D6282CDE0300D9827F /* CircleProgressView.m */; };
 		57AEAE43282BAE5F00589F60 /* CADisplayLinkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AEAE42282BAE5F00589F60 /* CADisplayLinkVC.m */; };
 		57DEE86E2826568A00E8F6CE /* DrawCatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE86D2826568A00E8F6CE /* DrawCatVC.m */; };
 		57DEE8712826648400E8F6CE /* JJCuteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DEE8702826648400E8F6CE /* JJCuteView.m */; };
@@ -189,6 +192,12 @@
 		5789F8FE281A9649009E43A1 /* CASpringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CASpringVC.m; sourceTree = "<group>"; };
 		5789F905281A9F7A009E43A1 /* DrawLineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineVC.h; sourceTree = "<group>"; };
 		5789F906281A9F7A009E43A1 /* DrawLineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLineVC.m; sourceTree = "<group>"; };
+		57A6A7CF282CB33A00D9827F /* BrushDrawVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrushDrawVC.h; sourceTree = "<group>"; };
+		57A6A7D0282CB33A00D9827F /* BrushDrawVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrushDrawVC.m; sourceTree = "<group>"; };
+		57A6A7D2282CDDE200D9827F /* CircleProgressLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleProgressLayer.h; sourceTree = "<group>"; };
+		57A6A7D3282CDDE200D9827F /* CircleProgressLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleProgressLayer.m; sourceTree = "<group>"; };
+		57A6A7D5282CDE0300D9827F /* CircleProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleProgressView.h; sourceTree = "<group>"; };
+		57A6A7D6282CDE0300D9827F /* CircleProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleProgressView.m; sourceTree = "<group>"; };
 		57AEAE41282BAE5F00589F60 /* CADisplayLinkVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADisplayLinkVC.h; sourceTree = "<group>"; };
 		57AEAE42282BAE5F00589F60 /* CADisplayLinkVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CADisplayLinkVC.m; sourceTree = "<group>"; };
 		57DEE86C2826568A00E8F6CE /* DrawCatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawCatVC.h; sourceTree = "<group>"; };
@@ -239,6 +248,7 @@
 				57643C422819234500924759 /* ViewController.m */,
 				5789F903281A9EEE009E43A1 /* Animation */,
 				5789F904281A9F39009E43A1 /* DrawView */,
+				57A6A7CE282CB2AF00D9827F /* OtherCase */,
 			);
 			path = "Animations-OC";
 			sourceTree = "<group>";
@@ -394,8 +404,6 @@
 				576F21F4281A706B00B710F7 /* CAEmitterVC.m */,
 				5789F8FD281A9649009E43A1 /* CASpringVC.h */,
 				5789F8FE281A9649009E43A1 /* CASpringVC.m */,
-				576F21B6281A6C9F00B710F7 /* OtherCaseVC.h */,
-				576F21B7281A6C9F00B710F7 /* OtherCaseVC.m */,
 				57AEAE41282BAE5F00589F60 /* CADisplayLinkVC.h */,
 				57AEAE42282BAE5F00589F60 /* CADisplayLinkVC.m */,
 			);
@@ -425,6 +433,21 @@
 				57DEE876282669D800E8F6CE /* CGContextAll.m */,
 			);
 			path = DrawView;
+			sourceTree = "<group>";
+		};
+		57A6A7CE282CB2AF00D9827F /* OtherCase */ = {
+			isa = PBXGroup;
+			children = (
+				576F21B6281A6C9F00B710F7 /* OtherCaseVC.h */,
+				576F21B7281A6C9F00B710F7 /* OtherCaseVC.m */,
+				57A6A7CF282CB33A00D9827F /* BrushDrawVC.h */,
+				57A6A7D0282CB33A00D9827F /* BrushDrawVC.m */,
+				57A6A7D5282CDE0300D9827F /* CircleProgressView.h */,
+				57A6A7D6282CDE0300D9827F /* CircleProgressView.m */,
+				57A6A7D2282CDDE200D9827F /* CircleProgressLayer.h */,
+				57A6A7D3282CDDE200D9827F /* CircleProgressLayer.m */,
+			);
+			path = OtherCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +575,7 @@
 				57643C5A2819447000924759 /* BaseViewController.m in Sources */,
 				5789F8FF281A9649009E43A1 /* CASpringVC.m in Sources */,
 				57DEE86E2826568A00E8F6CE /* DrawCatVC.m in Sources */,
+				57A6A7D1282CB33A00D9827F /* BrushDrawVC.m in Sources */,
 				57643C5728192DAD00924759 /* UIAnimationVC.m in Sources */,
 				576F222B281A74C000B710F7 /* DCPathButton.m in Sources */,
 				576F21B5281A3F9A00B710F7 /* CATransitionVC.m in Sources */,
@@ -561,7 +585,9 @@
 				576F222D281A74C000B710F7 /* DCPathCenterButton.m in Sources */,
 				5789F907281A9F7A009E43A1 /* DrawLineVC.m in Sources */,
 				57DEE8742826699000E8F6CE /* CGContextVC.m in Sources */,
+				57A6A7D7282CDE0300D9827F /* CircleProgressView.m in Sources */,
 				57643C3D2819234500924759 /* AppDelegate.m in Sources */,
+				57A6A7D4282CDDE200D9827F /* CircleProgressLayer.m in Sources */,
 				577588282825172C00BCFC0E /* CAShapeLayerVC.m in Sources */,
 				576F2237281A750900B710F7 /* MCFireworksButton.m in Sources */,
 				57643C4E2819234800924759 /* main.m in Sources */,

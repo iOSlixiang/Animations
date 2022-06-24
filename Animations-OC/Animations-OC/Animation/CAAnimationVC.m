@@ -112,10 +112,10 @@
     //动画速率
     //basicAni.speed = 0.1;
     //图层是否显示执行后的动画执行后的位置以及状态
-    //basicAni.removedOnCompletion = NO;
+    basicAni.removedOnCompletion = NO;
     basicAni.fillMode = kCAFillModeForwards;
     //动画完成后是否以动画形式回到初始值
-    basicAni.autoreverses = YES;
+//    basicAni.autoreverses = NO;
     //动画时间偏移
     //basicAni.timeOffset = 0.5;
     //添加动画

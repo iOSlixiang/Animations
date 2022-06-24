@@ -10,9 +10,11 @@
 #import "DCPathButton.h"
 #import "DWBubbleMenuButton.h"
 #import "MCFireworksButton.h"
- 
+#import "CircleProgressView.h"
 
 @interface OtherCaseVC ()<DCPathButtonDelegate>
+
+@property (nonatomic, strong) CircleProgressView *progressView ;
 
 @end
 
@@ -23,7 +25,7 @@
     self.title =@"综合案例";
 }
 -(NSArray *)titleArray{
-    return  @[@"path",@"钉钉",@"点赞",@"贝塞尔曲线"];
+    return  @[@"path",@"钉钉",@"点赞",@"贝塞尔曲线",@"进度圈"];
 }
 -(BOOL)isHiddenRight{
     return NO;
@@ -42,7 +44,9 @@
         case 3:
             [self makeBezierPathAnimation];
             break;
- 
+        case 4:
+            [self makeCircleProgress];
+            break;
         default:
             break;
     }
@@ -174,7 +178,7 @@
     }
 }
 
-//===================================================================================================================
+ #pragma mark - 贝塞尔曲线
 - (void)makeBezierPathAnimation{
 
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -223,5 +227,27 @@
     
 }
  
+#pragma mark - 进度全
+- (void)makeCircleProgress{
+    if (self.progressView != 0 ) {
+        self.progressView.progress  = 0.5;
+        return;
+    }
+    self.progressView = [[CircleProgressView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
+    self.progressView.progress = 0.2;
+    [self.view addSubview:self.progressView];
+    
+    UISlider * slider = [[UISlider alloc]initWithFrame:CGRectMake(50, 400, 275, 10)];
+    [slider addTarget:self action:@selector(changeProgress:) forControlEvents:UIControlEventValueChanged];
+    slider.maximumValue = 1.0;
+    slider.minimumValue = 0.f;
+    slider.value = self.progressView.progress;
+    [self.view addSubview:slider];
+}
+
+- (void)changeProgress:(UISlider *)slider {
+    self.progressView.progress = slider.value;
+//    [self.circleProgressView setNeedsDisplay];
+}
 
 @end

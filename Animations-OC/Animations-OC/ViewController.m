@@ -17,13 +17,15 @@
 #import "CAEmitterVC.h"
 #import "CASpringVC.h"
 #import "CADisplayLinkVC.h"
-#import "OtherCaseVC.h"
 
 #import "UIBezierPathVC.h"
 #import "CAShapeLayerVC.h"
 #import "DrawLineVC.h"
 #import "DrawCatVC.h"
 #import "CGContextVC.h"
+
+#import "OtherCaseVC.h"
+#import "BrushDrawVC.h"
 
 NSString *const CellId = @"cellId";
 
@@ -49,7 +51,7 @@ NSString *const CellId = @"cellId";
 #pragma mark ---Getter
 -(UITableView *)tableView{
     if (!_tableView) {
-        _tableView  =[[UITableView alloc]initWithFrame:self.view.bounds style:(UITableViewStylePlain)];
+        _tableView  =[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-100) style:(UITableViewStylePlain)];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellId];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -66,8 +68,7 @@ NSString *const CellId = @"cellId";
                          @"转场动画:CATransition",
                          @"粒子动画:CAEmitterLayer",
                          @"弹簧动画:CASpringAnimation",
-                         @"Time动画:CADisplayLink",
-                         @"综合案例"];
+                         @"Time动画:CADisplayLink"];
     NSMutableDictionary *dic_1 = [NSMutableDictionary dictionaryWithObject:array_1 forKey:@"value"];
     [dic_1 setValue:@"动画" forKey:@"title"];
      
@@ -75,11 +76,18 @@ NSString *const CellId = @"cellId";
                          @"CAShapeLayer",
                          @"绘制线:DrawLine",
                          @"绘制猫:DrawCat",
-    @"CGContextRef"];
+                         @"CGContextRef"];
     NSMutableDictionary *dic_2 = [NSMutableDictionary dictionaryWithObject:array_2 forKey:@"value"];
     [dic_2 setValue:@"绘图" forKey:@"title"];
     
-    self.dataArr = @[dic_1,dic_2];
+    NSArray *array_3 = @[@"钉钉--点赞--贝塞尔曲线",
+                         @"画笔"];
+    NSMutableDictionary *dic_3 = [NSMutableDictionary dictionaryWithObject:array_3 forKey:@"value"];
+    [dic_3 setValue:@"综合案例" forKey:@"title"];
+     
+    
+    
+    self.dataArr = @[dic_1,dic_2,dic_3];
     
     [_tableView reloadData];
     
@@ -120,14 +128,16 @@ NSString *const CellId = @"cellId";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    
     if (indexPath.section == 0) {
-        [self seleceAnimation:indexPath];
+        [self selectAnimation:indexPath];
     }
     else if (indexPath.section == 1){
-        [self seleceDrawView:indexPath];
+        [self selectDrawView:indexPath];
     }
- 
+    else if (indexPath.section == 2){
+        [self selectOtherCaseView:indexPath];
+    }
 }
--(void)seleceAnimation:(NSIndexPath *)indexPath{
+-(void)selectAnimation:(NSIndexPath *)indexPath{
     
     UIViewController * animaVC;
     switch (indexPath.row) {
@@ -160,9 +170,6 @@ NSString *const CellId = @"cellId";
         case 8:
             animaVC = [[CADisplayLinkVC alloc]init];
             break;
-        case 9:
-            animaVC = [[OtherCaseVC alloc]init];
-            break;
             
         default:
             break;
@@ -178,7 +185,7 @@ NSString *const CellId = @"cellId";
   
     [self.navigationController pushViewController:animaVC animated:YES];
 }
--(void)seleceDrawView:(NSIndexPath *)indexPath{
+-(void)selectDrawView:(NSIndexPath *)indexPath{
     UIViewController * drawVC;
     switch (indexPath.row) {
         case 0:
@@ -205,5 +212,23 @@ NSString *const CellId = @"cellId";
     
 }
 
-
+-(void)selectOtherCaseView:(NSIndexPath *)indexPath{
+    UIViewController * drawVC;
+    switch (indexPath.row) {
+        case 0:
+            drawVC =  [[OtherCaseVC alloc]init];
+            break;
+        case 1:
+            drawVC =  [[BrushDrawVC alloc]init];
+            break;
+ 
+            
+        default:
+            break;
+    }
+ 
+    [self.navigationController pushViewController:drawVC animated:YES];
+    
+}
+ 
 @end
